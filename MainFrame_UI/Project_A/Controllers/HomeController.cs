@@ -13,16 +13,16 @@ namespace Project_A.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Users()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Personal autorizado y asignaciones realizadas";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Devices()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Estado de activos";
 
             return View();
         }
