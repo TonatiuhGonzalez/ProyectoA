@@ -1,0 +1,120 @@
+﻿@model Project_A.Assignment
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Assignment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.device_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.device_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.responsive_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.responsive_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ticket_number_up)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ticket_number_up)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ticket_number_down)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ticket_number_down)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.create_at)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.create_at)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.edit_at)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edit_at)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.App_Users.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.App_Users.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.App_Users1.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.App_Users1.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Device_Types.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Device_Types.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Proyect.proyect1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proyect.proyect1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State.state1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State.state1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
