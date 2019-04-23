@@ -13,6 +13,12 @@ namespace Project_A.Controllers
             return View();
         }
 
+        public ActionResult Create()
+        {
+            ViewBag.Message = "Modifique los valores del la asignación";
+            return View();
+        }
+
         public ActionResult Users()
         {
             ViewBag.Message = "Personal autorizado y asignaciones realizadas";
