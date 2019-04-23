@@ -6,8 +6,8 @@ namespace Project_A.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Display(Name = "User")]
+        public string User { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -42,16 +42,16 @@ namespace Project_A.Models
     public class ForgotViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Display(Name = "User")]
+        public string User { get; set; }
     }
 
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(Name = "User")]
         [EmailAddress]
-        public string Email { get; set; }
+        public string User { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -66,8 +66,8 @@ namespace Project_A.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Display(Name = "User")]
+        public string User { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -85,8 +85,8 @@ namespace Project_A.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Display(Name = "User")]
+        public string User { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -106,7 +106,7 @@ namespace Project_A.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Display(Name = "User")]
+        public string User { get; set; }
     }
 }
