@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Project_A.Assignment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.device_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.responsive_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ticket_number_up)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ticket_number_down)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.create_at)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.edit_at)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.App_Users.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.App_Users1.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Device_Types.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Proyect.proyect1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State.state1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.device_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.responsive_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ticket_number_up)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ticket_number_down)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.create_at)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.edit_at)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.App_Users.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.App_Users1.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Device_Types.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Proyect.proyect1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State.state1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
