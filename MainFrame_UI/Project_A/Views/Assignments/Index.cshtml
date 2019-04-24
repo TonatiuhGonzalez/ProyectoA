@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Project_A.Assignment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+   <!-- @Html.ActionLink("Create New", "Create")-->
+</p>
+<table class="table">
+    <tr>
+        <th>
+           <p>Id del dispositivo</p>
+        </th>
+        <th>
+           <p>No. de responsiva</p>
+        </th>
+        <th>
+           <p>No. de ticket up</p>
+        </th>
+        <th>
+          <p>No. de ticket down</p>
+        </th>
+        <th>
+           <p>Fecha de creacion</p>
+        </th>
+        <th>
+           <p>Fecha de modificacion</p>
+        </th>
+        <th>
+           <p>Nombre de responsable</p>
+        </th>
+        <th>
+            <p>Nombre de responsable</p>
+        </th>
+        <th>
+            <p>Tipo de dispositivo</p>
+        </th>
+        <th>
+          <p>Proyecto</p>
+        </th>
+        <th>
+          <p>Estado</p>
+        </th>
+        <th>
+          <p>Nombre de empleado</p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.device_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.responsive_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ticket_number_up)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ticket_number_down)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.create_at)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.edit_at)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.App_Users.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.App_Users1.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Device_Types.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Proyect.proyect1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State.state1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.name)
+        </td>
+        <td>
+            *@Html.ActionLink("Editar", "Edit", new { id=item.id })
+            *@Html.ActionLink("Detalles", "Details", new { id=item.id })
+            *@Html.ActionLink("Cancelar asignación", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
