@@ -191,7 +191,7 @@
     <Compile Include="Controllers\AssignmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\NewAssignmentController.cs" />
+    <Compile Include="Controllers\NewAssignmentsController.cs" />
     <Compile Include="Device.cs">
       <DependentUpon>Inventory.tt</DependentUpon>
     </Compile>
@@ -225,9 +225,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\NewAssignmentModels.cs" />
-    <Compile Include="Models\Responsable.cs" />
-    <Compile Include="Models\Sede.cs" />
+    <Compile Include="Models\NewAssignment.cs" />
     <Compile Include="Operating_Systems.cs">
       <DependentUpon>Inventory.tt</DependentUpon>
     </Compile>
@@ -333,7 +331,7 @@
     <Content Include="Views\Assignments\Details.cshtml" />
     <Content Include="Views\Assignments\Edit.cshtml" />
     <Content Include="Views\Assignments\Index.cshtml" />
-    <Content Include="Views\NewAssignment\New.cshtml" />
+    <Content Include="Views\NewAssignments\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

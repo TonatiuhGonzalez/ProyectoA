@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "New Assignment";
+}
+@model Project_A.Models.NewAssignment
+<h2>New Assignment</h2>
+
+
+    @using (Html.BeginForm("New", "NewAssignments", FormMethod.Post))
+    {
+        <div class="form-group">
+            <label>Numero de Empleado</label>
+            <div class="tt-container">
+                <input id="empleado" name="empleado" data-rule-validCustomer="true" required type="text" value="" class="form-control" />
+                <button class="btn btn-primary" type="submit">Obtener</button>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label>Numero de Activo</label>
+            <div class="tt-container">
+                <input id="activo" name="activo" data-rule-atLeastOneMovie="true" type="text" value="" class="form-control" />
+                <button class="btn btn-primary" type="submit">Mostrar</button>
+            </div>
+        </div>
+
+        
+    }
+
+
+<form>
+    <div>
+
+        <label>Folio: </label>
+        @Html.DisplayFor(m => m.Folio)
+        <br /><label>Fecha: </label>
+        @Html.DisplayFor(m => m.Fecha)
+        <br /><label>Numero de Personal: </label>
+        @Html.DisplayFor(m => m.NPersonal)
+        <br /><label>Username: </label>
+        @Html.DisplayFor(m => m.Username)
+        <br /><label>Nombre: </label>
+        @Html.DisplayFor(m => m.Nombre)
+        <br /><label>Sede: </label>
+        @Html.DisplayFor(m => m.Sede)
+        <br /><label>Proyecto: </label>
+        @Html.DisplayFor(m => m.Proyecto)
+        <br /><label>Responsable: </label>
+        @Html.DisplayFor(m => m.Responsable)
+    </div>
+</form>
