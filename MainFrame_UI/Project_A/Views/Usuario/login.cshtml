@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("login", "usuario", FormMethod.Post))
+{
+    <br /> <br />
+    <label>User</label>
+    <input type="text" value="" name="usuario" />
+    <br /> <br />
+    <label>Password</label>
+    <input type="text" value="" name="psw" />
+    <br /> <br />
+    <input type="submit" value="Log In" name="boton" />
+
+
+}

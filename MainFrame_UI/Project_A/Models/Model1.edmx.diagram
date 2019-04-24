@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ef8b0b4c0a96473aa7cfc6ce9cb6e157" Name="Diagram1">
+        <EntityTypeShape EntityType="inventoryModel1.App_Users" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel1.Assignment" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel1.Brand" Width="1.5" PointX="0.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel1.Computer_Extras" Width="1.5" PointX="0.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel1.Device_Types" Width="1.5" PointX="6" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel1.Device" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel1.Location" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel1.Model" Width="1.5" PointX="0.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel1.Operating_Systems" Width="1.5" PointX="1.5" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel1.Processor" Width="1.5" PointX="1.5" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel1.Proyect" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel1.State" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel1.Title" Width="1.5" PointX="3.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel1.User_Types" Width="1.5" PointX="1.5" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel1.User" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="inventoryModel1.fk_responsible_Devices" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_responsible_down_Assignments" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_responsible_Up_Assignments" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_user_type_App_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_assignment_Devices" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_device_type_Assignments" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_proyect_Assignments" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_state_Assignments" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_user_Assignments" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_brand_Devices" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_brand_Models" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_computer_extra_Devices" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_operating_system_Computer_Extras" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_processor_Computer_Extras" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_deviceType_Devices" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_location_Devices" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_model_Devices" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_proyect_Devices" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_state_Devices" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_location_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel1.fk_title_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
