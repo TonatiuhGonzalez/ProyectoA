@@ -1,7 +1,9 @@
 ﻿@model Project_A.User
+
 @{
-    ViewBag.Title = "About";
+    ViewBag.Title = "DetailsUser";
 }
+
 <h2>DetailsUser</h2>
 
 <div>
@@ -91,5 +93,6 @@
     </dl>
 </div>
 <p>
-   
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>
