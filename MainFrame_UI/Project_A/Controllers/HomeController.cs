@@ -117,7 +117,9 @@ TIPO DE EQUIPO:	PORTATIL             ESTADO DEL EQUIPO:	USADO                   
 PROCESADOR:	Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz 1.99GHz                    MODELO:	Probook 644 	        	MARCA:	INTEL
 N° DE SERIE:	5CG90488NT                  DISCO DURO:	238468.5 MB                          RAM: 8192 GB
 		
-Otros Accesorios:	Cargador HP    |    Marca monitor: DELL      Modelo: E176FPf      S/N: CN-0CC639-72872-61F-78HT         No.Inv: G-0000000294 Marca monitor2:                              Modelo2:                            S/N: No.Inv:               Observaciones:	N-0000000700            Fortitoken NS:
+Otros Accesorios:	Cargador HP    |    Marca monitor: DELL      Modelo: E176FPf      S/N: CN-0CC639-72872-61F-78HT         No.Inv: G-0000000294 
+Marca monitor2:                              Modelo2:                            S/N: No.Inv:               Observaciones:	N-0000000700            Fortitoken NS:
+
 Dicho “EQUIPO” queda bajo responsabilidad del “USUARIO”, por lo que en caso de encontrar cualquier falla de funcionamiento o avería deberá reportarlo inmediatamente al equipo de Soporte Técnico para su reparación y en su caso reposición. De manera enunciativa, más no limitativa, el “USUARIO” se obliga a:
 
 I.	Cuidar el contenido y seguridad de la información que se encuentre en el “EQUIPO” y en discos de cualquier tipo que contengan respaldo de dicha información.
