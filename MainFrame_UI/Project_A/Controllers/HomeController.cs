@@ -28,15 +28,17 @@ namespace Project_A.Controllers
         // write on start of each page
         public override void OnStartPage(PdfWriter writer, Document document)
         {
+            Font fontH1 = new Font( Font.NORMAL, 10, Font.NORMAL);
+            DateTime fecha = DateTime.Today;
             base.OnStartPage(writer, document);
             PdfPTable tabFot = new PdfPTable(new float[] { 1F });
             PdfPCell cell;
-            tabFot.TotalWidth = 300F;
-            cell = new PdfPCell(new Phrase("TEST Header"));
-            cell.Border = Rectangle.NO_BORDER;
-            cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            tabFot.TotalWidth = 500F;
+            cell = new PdfPCell(new Phrase(fecha.ToString("MM/dd/yyyy") +"                     CARTA RESPONSIVA" + "             SEDE: Guadalajara   GLOBAL HITSS", fontH1));
+            cell.Border = Rectangle.BOTTOM_BORDER;
+            cell.HorizontalAlignment = Element.ALIGN_LEFT;
             tabFot.AddCell(cell);
-            tabFot.WriteSelectedRows(0, -1, 150, document.Top, writer.DirectContent);
+            tabFot.WriteSelectedRows(0, -1, 50, document.Top, writer.DirectContent);
 
         }
 
@@ -47,12 +49,12 @@ namespace Project_A.Controllers
             base.OnEndPage(writer, document);
             PdfPTable tabFot = new PdfPTable(new float[] { 1F });
             PdfPCell cell;
-            tabFot.TotalWidth = 300F;
-            cell = new PdfPCell(new Phrase("TEST" + " - " + horario));
-            cell.Border = Rectangle.NO_BORDER;
-            cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            tabFot.TotalWidth = 500F;
+            cell = new PdfPCell(new Phrase("Pagina" + " - " + document.PageNumber));
+            cell.Border = Rectangle.TOP_BORDER;
+            cell.HorizontalAlignment = Rectangle.ALIGN_RIGHT;
             tabFot.AddCell(cell);
-            tabFot.WriteSelectedRows(0, -1, 150, document.Bottom, writer.DirectContent);
+            tabFot.WriteSelectedRows(0, -1, 50, document.Bottom, writer.DirectContent);
         }
 
         //write on close of document
@@ -109,7 +111,6 @@ namespace Project_A.Controllers
 
                 string text = @"
 El presente documento es aplicable para el personal asignado a cualquiera de las personas morales del Grupo Corporativo conocido comercialmente como “HITSS” y/o a cualquiera de sus clientes, ya sea que se encuentre contratado por alguna de dichas personas morales o por un tercero, y a quien en lo sucesivo se denominará “USUARIO”. 
-
 Por medio de la presente el “USUARIO” reconoce y acepta recibir para el resguardo y operación, el equipo de cómputo que se detalla más adelante (en lo sucesivo el “EQUIPO”, el cual no es de su propiedad y que cuenta con los accesorios y componentes necesarios para su buen funcionamiento). 
 
 TIPO DE EQUIPO:	PORTATIL             ESTADO DEL EQUIPO:	USADO                   MARCA CHASIS: HP
@@ -127,20 +128,17 @@ V.	No realizar reparaciones al hardware por su cuenta ni actualizar o introducir
 VI.	Si el equipo presenta daños por mal uso, golpes, derramamiento de líquidos y aquellas causas no relacionadas a un uso normal, notificar a su supervisor y al área de Soporte Técnico para que se envíe el “EQUIPO” a un centro de servicio autorizado del fabricante para su diagnóstico y reparación  de los dispositivos afectados por el daño, en el entendido de  que el costo de dicha reparación correrá por exclusiva cuenta del “USUARIO”.
 
 Por todo lo anteriormente señalado, el área de Soporte Técnico podrá realizar auditorías de inspección del “EQUIPO” en cualquier tiempo, para cerciorarse del cumplimiento de las obligaciones establecidas en la presente carta y las políticas de seguridad de la información.
-
 En caso de que el “USUARIO” infrinja algún punto de los anteriormente mencionados, el área de Soporte Técnico lo reportará a la Dirección Corporativa de  Finanzas y Administración y a la Dirección a la que esté adscrito el ”USUARIO”.
 
 FIRMA DE  CONFORMIDAD DEL “USUARIO”
-
 Por medio de la presente reconozco, acepto y me obligo a cumplir con los lineamientos establecidos en esta “Carta Responsiva”.
 
-RECIBO Y ACEPTO";
+                                                                                                                           RECIBO Y ACEPTO";
 
 
-                string text2 = @"Políticas de Seguridad de la Información
-
+                string text2 = @"
+Políticas de Seguridad de la Información
 Con el fin de poder garantizar la confidencialidad de la información, su divulgación no autorizada, el acceso a la información no permitida, la integridad que asegura que la información se encuentre protegida de la destrucción o pérdida y la disponibilidad de la información: 
-
 •	El usuario no deberá almacenar, enviar, recibir o mostrar información obscena u ofensiva, aunque sea de manera temporal, en áreas donde puedan ser vistas por uno o más individuos de manera pasiva o inadvertida.
 •	El usuario no deberá de llevar a cabo cualquier actividad que pueda afectar de manera directa o indirecta la imagen de la organización o las relaciones que tenga con sus clientes.
 •	La información contenida dentro del equipo del usuario queda a responsabilidad completa del usuario, la cual debe ser respaldada periódicamente por el mismo para evitar su pérdida en caso de desastre.
@@ -166,8 +164,7 @@ Con el fin de poder garantizar la confidencialidad de la información, su divulg
 •	Está prohibido dar de alta servidores que tengan acceso a la red del patrón o que se encuentren en las instalaciones del mismo, si no fue permitido previamente por escrito por el área de Soporte Técnico.
 •	Está prohibido dar de alta servidores o equipos de telecomunicaciones con servicios de WINS, DNS o DHCP dentro de la red del patrón.
 •	Queda prohibido hacer uso de INTERNET para fines personales, el uso de este es una herramienta de trabajo por lo que debe utilizarse única y exclusivamente para el desempeño de sus actividades.
- 
-RECIBO Y ACEPTO DE CONFORMIDAD";
+                                                                                                                    RECIBO Y ACEPTO DE CONFORMIDAD";
 
                                                  string firma= @"____________________________
 VILLA AYALA ADAN";
@@ -191,7 +188,7 @@ VILLA AYALA ADAN";
                 paragraph2.SpacingBefore = 30;
                 paragraph2.SpacingAfter = 30;
                 paragraph2.Alignment = Element.ALIGN_JUSTIFIED;
-                paragraph2.Font = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 7f, BaseColor.BLACK);
+                paragraph2.Font = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 6.5f, BaseColor.BLACK);
                 paragraph2.Add(text2);
                 document.Add(paragraph2);
                 document.Add(pfirm);
