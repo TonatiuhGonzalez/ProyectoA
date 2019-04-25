@@ -1,6 +1,7 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
+
 [assembly: OwinStartupAttribute(typeof(Project_A.Startup))]
 namespace Project_A
 {
@@ -11,4 +12,6 @@ namespace Project_A
             ConfigureAuth(app);
         }
     }
+
+
 }
