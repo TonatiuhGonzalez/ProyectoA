@@ -13,10 +13,10 @@ namespace Project_A
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class inventoryEntities : DbContext
+    public partial class inventoryEntitiesDB : DbContext
     {
-        public inventoryEntities()
-            : base("name=inventoryEntities")
+        public inventoryEntitiesDB()
+            : base("name=inventoryEntitiesDB")
         {
         }
     
@@ -37,7 +37,6 @@ namespace Project_A
         public virtual DbSet<Processor> Processors { get; set; }
         public virtual DbSet<Proyect> Proyects { get; set; }
         public virtual DbSet<State> States { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Title> Titles { get; set; }
         public virtual DbSet<User_Types> User_Types { get; set; }
         public virtual DbSet<User> Users { get; set; }

@@ -12,7 +12,7 @@ namespace Project_A.Controllers
 {
     public class AssignmentsController : Controller
     {
-        private inventoryEntities db = new inventoryEntities();
+        private inventoryEntitiesDB db = new inventoryEntitiesDB();
 
         // GET: Assignments
         public ActionResult Index()

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="inventoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="inventoryModelDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="App_Users">
           <Key>
             <PropertyRef Name="id" />
@@ -117,16 +117,6 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="state" Type="varchar" MaxLength="255" Nullable="false" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Titles">
           <Key>
@@ -410,7 +400,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="inventoryModelStoreContainer">
+        <EntityContainer Name="inventoryModelDBStoreContainer">
           <EntitySet Name="App_Users" EntityType="Self.App_Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Assignments" EntityType="Self.Assignments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Brands" EntityType="Self.Brands" Schema="dbo" store:Type="Tables" />
@@ -423,7 +413,6 @@
           <EntitySet Name="Processors" EntityType="Self.Processors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proyects" EntityType="Self.Proyects" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Titles" EntityType="Self.Titles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User_Types" EntityType="Self.User_Types" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
@@ -516,7 +505,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="inventoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="inventoryModelDB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="App_Users">
           <Key>
             <PropertyRef Name="id" />
@@ -666,16 +655,6 @@
           <Property Name="state1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Assignments" Relationship="Self.fk_state_Assignments" FromRole="States" ToRole="Assignments" />
           <NavigationProperty Name="Devices" Relationship="Self.fk_state_Devices" FromRole="States" ToRole="Devices" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Title">
           <Key>
@@ -964,7 +943,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="inventoryEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="inventoryEntitiesDB" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="App_Users" EntityType="Self.App_Users" />
           <EntitySet Name="Assignments" EntityType="Self.Assignment" />
           <EntitySet Name="Brands" EntityType="Self.Brand" />
@@ -977,7 +956,6 @@
           <EntitySet Name="Processors" EntityType="Self.Processor" />
           <EntitySet Name="Proyects" EntityType="Self.Proyect" />
           <EntitySet Name="States" EntityType="Self.State" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Titles" EntityType="Self.Title" />
           <EntitySet Name="User_Types" EntityType="Self.User_Types" />
           <EntitySet Name="Users" EntityType="Self.User" />
@@ -1071,9 +1049,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="inventoryModelStoreContainer" CdmEntityContainer="inventoryEntities">
+        <EntityContainerMapping StorageEntityContainer="inventoryModelDBStoreContainer" CdmEntityContainer="inventoryEntitiesDB">
           <EntitySetMapping Name="App_Users">
-            <EntityTypeMapping TypeName="inventoryModel.App_Users">
+            <EntityTypeMapping TypeName="inventoryModelDB.App_Users">
               <MappingFragment StoreEntitySet="App_Users">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -1083,7 +1061,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Assignments">
-            <EntityTypeMapping TypeName="inventoryModel.Assignment">
+            <EntityTypeMapping TypeName="inventoryModelDB.Assignment">
               <MappingFragment StoreEntitySet="Assignments">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -1102,7 +1080,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Brands">
-            <EntityTypeMapping TypeName="inventoryModel.Brand">
+            <EntityTypeMapping TypeName="inventoryModelDB.Brand">
               <MappingFragment StoreEntitySet="Brands">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="brand1" ColumnName="brand" />
@@ -1110,7 +1088,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Computer_Extras">
-            <EntityTypeMapping TypeName="inventoryModel.Computer_Extras">
+            <EntityTypeMapping TypeName="inventoryModelDB.Computer_Extras">
               <MappingFragment StoreEntitySet="Computer_Extras">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="operating_system_id" ColumnName="operating_system_id" />
@@ -1121,7 +1099,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Device_Types">
-            <EntityTypeMapping TypeName="inventoryModel.Device_Types">
+            <EntityTypeMapping TypeName="inventoryModelDB.Device_Types">
               <MappingFragment StoreEntitySet="Device_Types">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="type" ColumnName="type" />
@@ -1129,7 +1107,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Devices">
-            <EntityTypeMapping TypeName="inventoryModel.Device">
+            <EntityTypeMapping TypeName="inventoryModelDB.Device">
               <MappingFragment StoreEntitySet="Devices">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="device_type_id" ColumnName="device_type_id" />
@@ -1149,7 +1127,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Locations">
-            <EntityTypeMapping TypeName="inventoryModel.Location">
+            <EntityTypeMapping TypeName="inventoryModelDB.Location">
               <MappingFragment StoreEntitySet="Locations">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="location1" ColumnName="location" />
@@ -1157,7 +1135,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Models">
-            <EntityTypeMapping TypeName="inventoryModel.Model">
+            <EntityTypeMapping TypeName="inventoryModelDB.Model">
               <MappingFragment StoreEntitySet="Models">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="brand_id" ColumnName="brand_id" />
@@ -1166,7 +1144,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Operating_Systems">
-            <EntityTypeMapping TypeName="inventoryModel.Operating_Systems">
+            <EntityTypeMapping TypeName="inventoryModelDB.Operating_Systems">
               <MappingFragment StoreEntitySet="Operating_Systems">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="operating_system" ColumnName="operating_system" />
@@ -1174,7 +1152,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Processors">
-            <EntityTypeMapping TypeName="inventoryModel.Processor">
+            <EntityTypeMapping TypeName="inventoryModelDB.Processor">
               <MappingFragment StoreEntitySet="Processors">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="processor1" ColumnName="processor" />
@@ -1182,7 +1160,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Proyects">
-            <EntityTypeMapping TypeName="inventoryModel.Proyect">
+            <EntityTypeMapping TypeName="inventoryModelDB.Proyect">
               <MappingFragment StoreEntitySet="Proyects">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="proyect1" ColumnName="proyect" />
@@ -1190,26 +1168,15 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="States">
-            <EntityTypeMapping TypeName="inventoryModel.State">
+            <EntityTypeMapping TypeName="inventoryModelDB.State">
               <MappingFragment StoreEntitySet="States">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="state1" ColumnName="state" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="inventoryModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Titles">
-            <EntityTypeMapping TypeName="inventoryModel.Title">
+            <EntityTypeMapping TypeName="inventoryModelDB.Title">
               <MappingFragment StoreEntitySet="Titles">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title1" ColumnName="title" />
@@ -1217,7 +1184,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User_Types">
-            <EntityTypeMapping TypeName="inventoryModel.User_Types">
+            <EntityTypeMapping TypeName="inventoryModelDB.User_Types">
               <MappingFragment StoreEntitySet="User_Types">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="type" ColumnName="type" />
@@ -1225,7 +1192,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="inventoryModel.User">
+            <EntityTypeMapping TypeName="inventoryModelDB.User">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />

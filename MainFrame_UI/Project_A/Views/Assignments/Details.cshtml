@@ -1,0 +1,114 @@
+﻿@model Project_A.Assignment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Assignment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p>Id del dispositivo</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.device_id)
+        </dd>
+
+        <dt>
+            <p>Numero de responsiva</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.responsive_number)
+        </dd>
+
+        <dt>
+            <p>Numero de ticket up</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ticket_number_up)
+        </dd>
+
+        <dt>
+            <p>Numero de ticket down</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ticket_number_down)
+        </dd>
+
+        <dt>
+            <p>Fecha de creacion</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.create_at)
+        </dd>
+
+        <dt>
+            <p>Fecha de modificacion</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edit_at)
+        </dd>
+
+        <dt>
+            <p>Nombre del responsable</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.App_Users.name)
+        </dd>
+
+        <dt>
+            <p>Nombre del responsable</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.App_Users1.name)
+        </dd>
+
+        <dt>
+            <p>Tipo de dispositivo</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Device_Types.type)
+        </dd>
+
+        <dt>
+            <p>Proyecto</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proyect.proyect1)
+        </dd>
+
+        <dt>
+            <p>Estado</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State.state1)
+        </dd>
+
+        <dt>
+            <p>Nombre del empleado</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>
