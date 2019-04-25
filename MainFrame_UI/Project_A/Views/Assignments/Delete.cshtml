@@ -1,0 +1,119 @@
+﻿@model Project_A.Assignment
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Cancelar</h2>
+
+<h3>¿Quieres cancelar la asignación?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+          <p>ID del dispositivo</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.device_id)
+        </dd>
+
+        <dt>
+          <p>No. de responsiva</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.responsive_number)
+        </dd>
+
+        <dt>
+           <p>No. ticket up</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ticket_number_up)
+        </dd>
+
+        <dt>
+           No. ticket down
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ticket_number_down)
+        </dd>
+
+        <dt>
+            <p>Fecha de creación</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.create_at)
+        </dd>
+
+        <dt>
+          <p>Fecha de modificación</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edit_at)
+        </dd>
+
+        <dt>
+          <p>Nombre de responsable</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.App_Users.name)
+        </dd>
+
+        <dt>
+            <p>Nombre de responsable</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.App_Users1.name)
+        </dd>
+
+        <dt>
+            <p>Tipo de dispositivo</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Device_Types.type)
+        </dd>
+
+        <dt>
+           <p>Proyecto</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proyect.proyect1)
+        </dd>
+
+        <dt>
+           <p>Estado</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State.state1)
+        </dd>
+
+        <dt>
+           <p>Empleado</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Cancelar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver a la lista", "Index")
+        </div>
+    }
+</div>
